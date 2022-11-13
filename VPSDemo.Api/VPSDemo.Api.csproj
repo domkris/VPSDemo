@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\VPSDemo.Application\VPSDemo.Application.csproj" />
     <ProjectReference Include="..\VPSDemo.Infrastructure\VPSDemo.Infrastructure.csproj" />
   </ItemGroup>
