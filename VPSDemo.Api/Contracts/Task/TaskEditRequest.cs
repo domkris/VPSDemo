@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using VPSDemo.Api.Contracts.Task.DataAnnotations;
 using VPSDemo.Domain.Entities;
 
 namespace VPSDemo.Api.Contracts.Task
@@ -14,21 +15,9 @@ namespace VPSDemo.Api.Contracts.Task
         [Range(0, 999)]
         public int? EffortEstimation { get; set; }
 
-        private String? status { get; set; }
 
+        [ValidStatus]
         [MaxLength(11)]
-        public string Status
-        {
-            get
-            {
-                return status;
-            }
-            set
-            {
-                if (!TaskStatusValues.ValuesDict.Any(x => x.Value == value))
-                    throw new ArgumentException($" Task status value '{value}' is not a valid value");
-                status = value;
-            }
-        }
+        public string Status { get; set; } = null!; 
     }
 }
