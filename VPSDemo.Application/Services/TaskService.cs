@@ -18,9 +18,7 @@ namespace VPSDemo.Application.Services
                 return Result.Fail<Domain.Entities.Task>(
                     new EntityNotExistError(id, EntityName));
 
-            if (_repository.GetById(parentId) is not Domain.Entities.Task parentTask)
-                return Result.Fail<Domain.Entities.Task>(
-                   new EntityNotExistError(parentId, EntityName));
+            var parentTask = Get(parentId).Value;
 
             _repository.AssignSubTask(subTask, parentTask);
             return parentTask;
