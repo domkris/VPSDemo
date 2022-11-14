@@ -5,7 +5,29 @@ create and edit a task hierarchy, as well as perform calculations on the data fi
 hierarchy.
 
 ### Technologies used:
-ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database
+ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database, Docker
+
+### Libraries and patterns:
+
+Clean Architectue, Domain Driven Design, Repository Pattern
+
+#### [AutoMapper](https://github.com/AutoMapper/AutoMapper)
+
+- Automapper is set in VPSDemo.Api.Mapper
+- TaskMapperProfiles.cs to configure automapper for Task entity
+
+#### [FluentResults](https://github.com/altmann/FluentResults)
+- Instead of throwing and using exceptions we use a Return object.
+- Return object has a value, IsFailed, IsSuccess properties.
+- errors of Return object are handled via ProblemHandler in BaseController.
+
+#### Error and Validations Handling
+- Globar errors are handled in VPSDemo.Api.Controllers ErrorsController.cs
+- All other non server side errors are handled via ProblemHandler method in VPSDemo.Api.Controllers BaseController.cs
+- Uri and query identifier parameter is validated via ValidateIdentifier method in VPSDemo.Api.Validations BaseValidation.cs
+- UI Models (Contracts)are validated via validation filter defined in VPSDemo.Api.Filters ValidationFilterAttribute.cs
+- All errors are serverd to the user with ProblemDetails class [Problem Details Specification for HTTP APIs](https://www.rfc-editor.org/rfc/rfc7807)
+- in order to add custom 'errorMessage' to ProblemDetails class we override method CreateProblemDetails in VPSDemo.Api.Common VPSProblemDetailsFactory.cs
 
 ### Type of architecture used with different layers
 
