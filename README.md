@@ -259,3 +259,17 @@ ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database
 </td>
 </tr>
 </table>
+
+## Docker
+
+VPSDemo.Api contains Dockerfile to build docker image.<br/>
+We use base image mcr.microsoft.com/dotnet/sdk:6.0 to build binaries. <br/>
+.Net runtime image mcr.microsoft.com/dotnet/aspnet:6.0 is used to serve artefacts we've created <br/>
+
+### Local docker container running our image:
+
+![promisechains](https://github.com/domkris/files/blob/master/VPSDemo/docker.png?raw=true)
+
+### Opening the browser to display app runnig from docker container:
+
+![promisechains](https://github.com/domkris/files/blob/master/VPSDemo/docker_web.png?raw=true)
