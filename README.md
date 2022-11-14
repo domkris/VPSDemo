@@ -28,7 +28,7 @@ ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database
 <table>
 <tr>
 <th> Request body </th>
-<th> Response (SUCCESS 200) </th>
+<th> Response (SUCCESS 200 Ok) </th>
 </tr>
 <tr>
 <td>
@@ -65,7 +65,7 @@ ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database
 <table>
 <tr>
 <th> Request body </th>
-<th> Response (FAIL) </th>
+<th> Response (FAIL 400) </th>
 </tr>
 <tr>
 <td>
@@ -102,7 +102,7 @@ ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database
 <table>
 <tr>
 <th> Request body </th>
-<th> Response (FAIL) </th>
+<th> Response (FAIL 400) </th>
 </tr>
 <tr>
 <td>
@@ -139,7 +139,7 @@ ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database
 <table>
 <tr>
 <th> Query (Key: Value) </th>
-<th> Response (Success) </th>
+<th> Response (Success 200 Ok) </th>
 </tr>
 <tr>
 <td>
@@ -186,7 +186,7 @@ ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database
 
 <table>
 <tr>
-<th> Response (Success) </th>
+<th> Response (Success 200 Ok) </th>
 </tr>
 <tr>
 <td>
@@ -239,7 +239,7 @@ ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database
 
 <table>
 <tr>
-<th> Response (FAIL) </th>
+<th> Response (FAIL 409) </th>
 </tr>
 <tr>
 <td>
