@@ -7,6 +7,16 @@ hierarchy.
 ### Technologies used:
 ASP.NET Core 6, C#, EntityFramework Core, MS SQL Server Database, Docker
 
+
+### App architecture used with different layers
+
+![promisechains](https://github.com/domkris/files/blob/master/VPSDemo/cleanarch.png?raw=true)
+
+- VPSDemo.Api (main Web API project) contains Controllers (endpoints), Contracts, Mappers, Filters.
+- VPSDemo.Application contains Interfaces, Errors, Logic to fetch data
+- VPSDemo.Domain contains Entities
+- VPSDemo.Infrastructure contains Repositories, Migration files and other fiels related to DB
+
 ### Libraries and patterns:
 
 Clean Architectue, Domain Driven Design, Repository Pattern
@@ -18,7 +28,7 @@ Clean Architectue, Domain Driven Design, Repository Pattern
 
 #### [FluentResults](https://github.com/altmann/FluentResults)
 - Instead of throwing and using exceptions we use a Return object.
-- Return object has a value, IsFailed, IsSuccess properties.
+- Return object has a Value, IsFailed, IsSuccess properties.
 - errors of Return object are handled via ProblemHandler in BaseController.
 
 #### Error and Validations Handling
@@ -29,16 +39,17 @@ Clean Architectue, Domain Driven Design, Repository Pattern
 - All errors are serverd to the user with ProblemDetails class [Problem Details Specification for HTTP APIs](https://www.rfc-editor.org/rfc/rfc7807)
 - in order to add custom 'errorMessage' to ProblemDetails class we override method CreateProblemDetails in VPSDemo.Api.Common VPSProblemDetailsFactory.cs
 
-### Type of architecture used with different layers
-
-![promisechains](https://github.com/domkris/files/blob/master/VPSDemo/cleanarch.png?raw=true)
+#### DB and UI models
+- DB Model (Entity) defined in VPSDemo.Domain.Entities Task.cs class
+- UI models (Contracts) defined in VPSDemo.Api.Contracts
+<hr>
 
 ### Capabilities of the Web API
 1. Create Task, Delete Task, Edit Task, Get Task, Assign Sub task
 2. Get Task - also retrieves sub Tasks
 3. Delete Task - Only a task which does not have sub-tasks can be deleted.
 
-<hr>
+
 
 ## Web API Endpoints & Examples
 
